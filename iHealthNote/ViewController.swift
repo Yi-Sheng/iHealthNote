@@ -10,28 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutlet
+    
+    /// 控制輸入帳號的 TextField
+    @IBOutlet weak var accountTextField: UITextField!
+    /// 控制輸入密碼的 TextField
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    // MARK: - IBAction
+    
+    /// 接收登入按鈕觸發的訊息
+    /// - Parameter sender: 按鈕
+    @IBAction func loginButtonClick(_ sender: UIButton) {
+        
+        let account = accountTextField.text
+        let password = passwordTextField.text
+        
+        print("Account: " + account! + ", Password: " + password!)
+        
+        performSegue(withIdentifier: "moveToMainViewSegue", sender: nil)
+    }
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        /// 變數
-        var index: Int = 1
-        
-        /// 常數
-        let opCode: Int = 2
-        
-        let result = index + opCode
-        
-        print("結果: \(result)")
-        
-        if index == 2 {
-            print("2")
-        } else {
-            print("\(index)")
-        }
-        
+    
         
     }
     
